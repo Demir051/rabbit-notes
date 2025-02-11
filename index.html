@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rabbit Notes</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+  <div class="min-h-full">
+    <nav class="bg-gray-800">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center">
+            <div class="shrink-0 text-white">
+              Rabbit Notes 🐰
+            </div>
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-4">
+                <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  aria-current="page">Dashboard</a>
+                <a href="#"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+
+    </nav>
+    <main>
+      <div class="mx-auto max-w-7xl py-6">
+        <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-4 text-gray-800">Add Note</h2>
+          
+          <form id="noteForm">
+              <label class="block text-gray-700 font-medium">Title</label>
+              <input type="text" id="noteTitle" placeholder="Enter header" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none mb-4">
+              
+              <label class="block text-gray-700 font-medium">Content</label>
+              <textarea id="noteContent" placeholder="Enter content" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none mb-4"></textarea>
+              
+              <label class="block text-gray-700 font-medium">Title color picker</label>
+              <input type="color" id="noteColor" value="#ff5733" class="w-full h-10 mb-4 cursor-pointer">
+              
+              <button type="submit" class="w-full cursor-pointer bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900 transition-all">
+                  Save
+              </button>
+          </form>
+      </div>
+      
+        <div class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div
+            class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div class="p-4 rounded-xl">
+              <h2 class="text-2xl text-gray-800">Card 1</h2>
+              <p class="text-gray-600 mt-2">Bu kart, Tailwind CSS ile yapılmış basit bir örnektir. Hover efektiyle büyür
+                ve gölgesi artar.</p>
+              <button
+                class="mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition-colors duration-300">Daha
+                Fazla</button>
+            </div>
+          </div>
+          <div
+            class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div class="p-4 rounded-xl">
+              <h2 class="text-2xl text-gray-800">Card 3</h2>
+              <p class="text-gray-600 mt-2">Bu kart, Tailwind CSS ile yapılmış basit bir örnektir. Hover efektiyle büyür
+                ve gölgesi artar.</p>
+              <button
+                class="mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition-colors duration-300">Daha
+                Fazla</button>
+            </div>
+          </div>
+          <div
+            class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div class="p-4 rounded-xl">
+              <h2 class="text-2xl text-gray-800">Card 4</h2>
+              <p class="text-gray-600 mt-2">Bu kart, Tailwind CSS ile yapılmış basit bir örnektir. Hover efektiyle büyür
+                ve gölgesi artar.</p>
+              <button
+                class="mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition-colors duration-300">Daha
+                Fazla</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
