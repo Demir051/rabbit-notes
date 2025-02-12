@@ -1,7 +1,7 @@
 {
     "rewrites": [
       {
-        "source": "/about",
+        "source": "/about.html",
         "destination": "/about.html"
       },
       {
@@ -9,5 +9,4 @@
         "destination": "/$1"
       }
     ]
-  }
-  
+}
