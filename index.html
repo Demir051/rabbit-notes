@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rabbit Notes</title>
   <link rel="stylesheet" href="./src/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -19,11 +18,11 @@
             <div class="shrink-0 text-white">
               Rabbit Notes 🐰
             </div>
-            <div class="hidden md:block">
+            <div class="block">
               <div class="ml-10 flex items-baseline space-x-4">
-                <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                <a href="./index.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
                   aria-current="page">Dashboard</a>
-                <a href="#"
+                <a href="./about.html"
                   class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
               </div>
             </div>
@@ -33,7 +32,7 @@
     </nav>
     <main>
       <div class="mx-auto max-w-7xl py-6">
-        <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <div class="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-md">
           <h2 class="text-2xl font-bold mb-4 text-gray-800">Add Note</h2>
 
           <form id="noteForm">
@@ -54,26 +53,11 @@
             </button>
           </form>
         </div>
-
         <div class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="notesList">
-          <div
-            class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out">
-            <div class="p-4 rounded-xl">
-              <h2 class="text-2xl text-gray-800">Card 3</h2>
-              <p class="text-gray-600 mt-2">Bu kart, Tailwind CSS ile yapılmış basit bir örnektir. Hover efektiyle büyür
-                ve gölgesi artar.</p>
-              <button
-                id="heartButton"
-                class="mt-4 flex items-center">
-                <span>🐰 <i>click me</i></span>
-              </button>
-            </div>
-          </div>
+          <!--Date here-->
         </div>
       </div>
     </main>
-
-
   </div>
 
   <script type="module" src="/src/main.ts"></script>

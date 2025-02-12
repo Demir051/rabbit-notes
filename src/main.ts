@@ -19,7 +19,7 @@ noteForm.addEventListener("submit", (event: Event) => {
   if (!titleValue || !contentValue) {
     alert("Please fill in all fields!");
     return;
-  }else{
+  } else {
     const note = {
       title: titleValue,
       content: contentValue,
@@ -48,37 +48,60 @@ window.onload = (): void => {
     notes.forEach((note: Note, index: number) => {
 
       const noteItem = document.createElement("div");
-      noteItem.classList.add("max-w-sm", "rounded", "overflow-hidden", "shadow-lg", "hover:shadow-2xl", "hover:scale-105", "transition-transform", "duration-300", "ease-in-out");
+      noteItem.setAttribute("data-id", `noteItem-${index}`);
+      noteItem.classList.add("h-48","max-w-sm", "rounded-xl", "overflow-hidden", "shadow-lg", "hover:shadow-2xl", "hover:scale-105", "transition-transform", "duration-300", "ease-in-out");
       noteItem.style.backgroundColor = note.color;
       notesList.appendChild(noteItem);
 
       const noteCard = document.createElement("div");
-      noteCard.classList.add("p-4", "rounded-xl");
+      noteCard.classList.add("w-full", "max-w-lg", "h-full", "p-4", "overflow-auto");
       noteItem.appendChild(noteCard);
 
       const noteTitle = document.createElement("h2");
-      noteTitle.classList.add("text-2xl", "text-gray-800");
+      noteTitle.classList.add("text-2xl", "text-black","inline");
       noteTitle.textContent = note.title;
       noteCard.appendChild(noteTitle);
 
+      const trashIcon = document.createElement("i");
+      trashIcon.classList.add("fa-solid", "fa-trash","ml-5","cursor-pointer", "text-lg");
+      noteCard.appendChild(trashIcon);
+
+      const line = document.createElement("hr");
+      line.classList.add("my-2");
+      noteCard.appendChild(line);
+
       const noteContent = document.createElement("p");
-      noteContent.classList.add("text-gray-600", "mt-2");
+      noteContent.classList.add("text-black", "mt-2","max-w-full");
       noteContent.textContent = note.content;
       noteCard.appendChild(noteContent);
 
       const heartButton = document.createElement("button");
-      heartButton.classList.add("mt-4", "flex", "items-center"), "heartButton";
+      heartButton.classList.add("mt-4", "flex", "items-center", "heartButton", "mt-0");
       heartButton.setAttribute("data-id", `heartButton-${index}`);
       noteCard.appendChild(heartButton);
 
       const heartIcon = document.createElement("span");
-      heartIcon.textContent ="🐰 click me";
+      heartIcon.textContent = "🐰 click me";
       heartButton.appendChild(heartIcon);
+
+      trashIcon.addEventListener("click", () => {
+
+        noteItem.remove();
+
+        let notes = JSON.parse(localStorage.getItem("notes") || "[]");
+        notes.splice(index, 1);
+        localStorage.setItem("notes", JSON.stringify(notes));
+      });
+
     });
   }
-};
+  
+  const heartButtons = document.querySelectorAll<HTMLButtonElement>("button[data-id^='heartButton-']");
 
-const heartButton = document.getElementById('heartButton') as HTMLButtonElement;
+  heartButtons.forEach((button) => {
+    button.addEventListener("click", addHeart);
+  });
+};
 
 const addHeart = () => {
   const heart = document.createElement('span');
@@ -95,7 +118,4 @@ const addHeart = () => {
     heart.remove();
   }, 3000);
 };
-
-if (heartButton) {
-  heartButton.addEventListener('click', addHeart);
-}
+  
