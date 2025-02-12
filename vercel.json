@@ -2,11 +2,11 @@
     "rewrites": [
       {
         "source": "/about.html",
-        "destination": "/about.html"
+        "destination": "/public/about.html"
       },
       {
         "source": "/(.*)",
-        "destination": "/error.html"
+        "destination": "/public/error.html"
       }
     ]
   }
