@@ -1,7 +1,7 @@
 {
     "rewrites": [
       {
-        "source": "/about.html",
+        "source": "/public/about.html",
         "destination": "/public/about.html"
       },
       {
