@@ -1,12 +1,12 @@
 {
     "rewrites": [
       {
-        "source": "/public/about.html",
-        "destination": "/public/about.html"
+        "source": "/about.html",
+        "destination": "/about.html"
       },
       {
         "source": "/(.*)",
-        "destination": "/public/error.html"
+        "destination": "/index.html"
       }
     ]
   }
